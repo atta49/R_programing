@@ -104,4 +104,46 @@ rbind(x,y)
 
 s<-list(1,"a",TRUE,"b",1+3i)
 s
+
+#factors
+t=factor(c("punjab","kpk","punjab","sindh","kpk"))
+t
+unclass(t)
+table(t) #no of elements
  
+t=factor(c("mon","tue","wend","thur","fri","sat","sun"))
+t
+t=factor(c("mon","tue","wend","thur","fri","sat","sun"),levels=(c("mon","tue","wend","thur","fri","sat","sun")))
+t
+unclass(t)
+
+#missing values
+u<-c(2,3,4,NaN,5,6,NA,NaN,6,NA)
+is.na(u)
+is.nan(u)
+
+#dataFrame
+v<-data.frame(day=1:4,rain=c(T,T,F,F))
+v
+nrow(v)
+ncol(c)
+row.names(v)<-c("a","b","c","d")
+v
+
+#Name in r oject
+w<-1:3
+names(w)
+names(w)<-c("col-A","col-B","col-c")
+names(w)
+w
+
+z<-list(a=1,b=2,c=3)
+z
+z=list(a=1:4,b="name",c=c("first_name","last_naem"))
+z
+z$c
+z$a
+
+ma<- matrix(1:4,nrow = 2,ncol = 2)
+dimnames(ma)<-list(c('r1','r2'),c('c1','c2'))
+ma
