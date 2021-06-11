@@ -5,6 +5,7 @@ mtcars$car_names <- rownames(mtcars) #create new coulmn car_names and assign the
 rownames(mtcars)<-c() #empty string remove the rowname column to index
 mtcars$car_names
 getwd()
+setwd('./RSQLite_and_RSQL_in_R')
 #create connection to the database
 conn<-dbConnect(RSQLite::SQLite(),'CarDB.db')
 #write the mtcars data set into table car_data
@@ -74,7 +75,7 @@ length(alltables)
 alltables[1:5]
 dbListFields(hg19,"HInvGeneMrna")
 dbGetQuery(hg19,"select count(*) from HInvGeneMrna")
-dbGetQuery(hg19,"select * from HInvGeneMrna")
+#dbGetQuery(hg19,"select * from HInvGeneMrna")
 res<-dbSendQuery(hg19,"select * from HInvGeneMrna")
 while(!dbHasCompleted(res)){
   chunks<-dbFetch(res ,n=5)
